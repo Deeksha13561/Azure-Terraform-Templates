@@ -1,9 +1,4 @@
-#tagging on VM
-module "azurerm_tags" {
-  source = "../azurerm_tags"
-  resource_ids = [azurerm_windows_virtual_machine.windows_vm.id]
-  depends_on = [azurerm_windows_virtual_machine.windows_vm]
-}
+
 
 #NIC 
 data "azurerm_network_interface" "nic" {

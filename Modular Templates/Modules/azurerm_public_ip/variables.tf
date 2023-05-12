@@ -23,12 +23,6 @@ variable "azurerm_environment_name" {
   description = "Provide enviornment name for which resources are getting provision."
 }
 
-variable "azurerm_region_name" {
-  default     = "Naa"
-  type        = string
-  description = "Provide region name for which resources are getting provision."
-}
-
 variable "azurerm_resource_group_iteration_number" {
   default     = "001"
   type        = string

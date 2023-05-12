@@ -22,9 +22,4 @@ variable "azurerm_resource_group_iteration_number" {
   description = "Provide iteration number for which resources are getting provision."
 }
 
-variable "azurerm_region_name" {
-  default     = "{{azurerm_region_name}}"
-  type        = string
-  description = "Provide region name for which resources are getting provision."
-}
 
