@@ -19,13 +19,14 @@ data "azurerm_availability_set" "as" {
   count  = var.aspresent ? 1 : 0
 }
 
+#NOTE- Here we are assuming that "MyKeyVault" and "MyResourceGroup" are pre-created resources in the Azure portal and we are referring them here
 data "azurerm_key_vault" "kv" {
-  name                = "Localtestkey1"
-  resource_group_name = "RG"
+  name                = "MyKeyVault"
+  resource_group_name = "MyResourceGroup"
 }
 
 data "azurerm_key_vault_secret" "key_vault_secret" {
-  name         = "VMLoginSecret"
+  name         = "MyKeyVaultSecret"
   key_vault_id = data.azurerm_key_vault.kv.id
 }
 
@@ -35,7 +36,7 @@ module "azurerm_availability_set" {
 }
 
 resource "azurerm_windows_virtual_machine" "windows_vm" {
-  name                  = "win${lower(var.azurerm_application_name)}${lower(var.azurerm_environment_name)}${lower(var.azurerm_region_name)}${var.azurerm_resource_group_iteration_number}"
+  name                  = "WindowsVirtualMachine"
   location              = (var.nicpresent ? data.azurerm_network_interface.nic[0].location : module.azurerm_network_interface[0].resource_group_location)
   resource_group_name   = (var.nicpresent ? data.azurerm_network_interface.nic[0].resource_group_name : module.azurerm_network_interface[0].resource_group_name)
   size                  = var.windows_vm_size

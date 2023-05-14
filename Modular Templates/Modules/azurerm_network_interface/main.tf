@@ -1,9 +1,3 @@
-module "azurerm_tags" {
-  source = "../azurerm_tags"
-  resource_ids = [azurerm_network_interface.NIC.id]
-  depends_on = [azurerm_network_interface.NIC]
-}
-
 module "azurerm_subnet" {
   source = "../azurerm_subnet"
   count  = var.subnetpresent ? 0 : 1

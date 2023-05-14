@@ -13,6 +13,7 @@ module "azurerm_resource_group" {
 }
 
 resource "azurerm_public_ip" "pi1" {
+  #dynamic name generation in terraform
    name = "pip-${lower(var.azurerm_application_name)}-${lower(var.azurerm_environment_name)}-${var.azurerm_resource_group_iteration_number}"
 
   #When you are running this individual module - for creating AS in existing RG

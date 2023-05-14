@@ -15,7 +15,7 @@ variable "windows_vm_size" {
   description = "Provide windows vm size."
 }
 variable "windows_vm_admin_username" {
-  default     = "Admins"
+  default     = "Administraor"
   type        = string
   description = "Provide windows vm admin username."
 }
@@ -51,29 +51,7 @@ variable "windows_vm_version" {
   description = "Provide windows vm version."
 }
 
-variable "azurerm_application_name" {
-  default     = "OXP"
-  type        = string
-  description = "Provide application name for which resources are getting provision."
-}
 
-variable "azurerm_environment_name" {
-  default     = "P"
-  type        = string
-  description = "Provide enviornment name for which resources are getting provision."
-}
-
-variable "azurerm_region_name" {
-  default     = "apac"
-  type        = string
-  description = "Provide region name for which resources are getting provision."
-}
-
-variable "azurerm_resource_group_iteration_number" {
-  default     = "1"
-  type        = string
-  description = "Provide iteration number for which resources are getting provision."
-}
 
 variable "nicpresent" {
   default     = false
@@ -82,7 +60,7 @@ variable "nicpresent" {
 }
 
 variable "availability_set_name" {
-  default     = "avail-cpib-prod-naa-001"
+  default     = "MyAvailabilitySt"
   type        = string
   description = "Provide availabilty set name"
 }
@@ -95,7 +73,7 @@ variable "aspresent" {
 
 
 variable "storage_uri" {
-  default     = "https://tfstgacc011.blob.core.windows.net/"
+  default     = "https://storage1.blob.core.windows.net/"
   type        = string
   description = "Storage account URL"
 }

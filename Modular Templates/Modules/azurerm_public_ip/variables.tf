@@ -12,19 +12,19 @@ variable "pip_allocation_method" {
 }
 
 variable "azurerm_application_name" {
-  default     = "CPIB"
+  default     = "MyApplication"
   type        = string
   description = "Provide application name for which resources are getting provision."
 }
 
 variable "azurerm_environment_name" {
-  default     = "Prod"
+  default     = "Production"
   type        = string
   description = "Provide enviornment name for which resources are getting provision."
 }
 
 variable "azurerm_resource_group_iteration_number" {
-  default     = "001"
+  default     = "1"
   type        = string
   description = "Provide iteration number for which resources are getting provision."
 }
